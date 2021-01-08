@@ -1,0 +1,47 @@
+<%= form_with(model: employee_leafe, local: true) do |form| %>
+  <% if employee_leafe.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(employee_leafe.errors.count, "error") %> prohibited this employee_leafe from being saved:</h2>
+
+      <ul>
+        <% employee_leafe.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :status %>
+    <%= form.text_field :status %>
+  </div>
+
+  <div class="field">
+    <%= form.label :reason %>
+    <%= form.text_field :reason %>
+  </div>
+
+  <div class="field">
+    <%= form.label :start_date %>
+    <%= form.date_select :start_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :end_date %>
+    <%= form.date_select :end_date %>
+  </div>
+
+  <div class="field">
+    <%= form.label :Request_employee_id %>
+    <%= form.text_field :Request_employee_id %>
+  </div>
+
+  <div class="field">
+    <%= form.label :action_employee_id %>
+    <%= form.text_field :action_employee_id %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
